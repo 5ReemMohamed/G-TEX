@@ -6,21 +6,7 @@ window.addEventListener('load', function () {
     }
   });
 document.addEventListener("DOMContentLoaded", () => {
-  // const scrollToTopBtn = document.querySelector("#scrollToTopBtn");
-  //  if (document.body.scrollTop <= 100 && document.documentElement.scrollTop <= 100) {
-  //      scrollToTopBtn.style.display = "none";
-  //  }
-  //  window.onscroll = function() {
-  //      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-  //          scrollToTopBtn.style.display = "block";
-  //      } else {
-  //          scrollToTopBtn.style.display = "none";
-  //      }
-  //  };
-
-  //  scrollToTopBtn.onclick = function() {
-  //      window.scrollTo({ top: 0, behavior: 'smooth' });
-  //  };
+ 
   const langSelect = document.getElementById('language-select');
   const htmlElement = document.getElementById('lang-html');
 
@@ -67,18 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setLanguage('ar');
 
-  const navbar = document.querySelector('.hero-navbar');
-  const navbarCollapse = document.getElementById('navbarNav');
+const navbar = document.querySelector('.hero-navbar');
+const navbarCollapse = document.getElementById('navbarNav');
 
-  if (navbarCollapse && navbar) {
-    navbarCollapse.addEventListener('show.bs.collapse', () => {
-      navbar.classList.add('scrolled');
-    });
+if (navbarCollapse && navbar) {
+  navbarCollapse.addEventListener('show.bs.collapse', () => {
+    navbar.classList.add('menu-open');
+  });
 
-    navbarCollapse.addEventListener('hide.bs.collapse', () => {
-      navbar.classList.remove('scrolled');
-    });
-  }
+  navbarCollapse.addEventListener('hide.bs.collapse', () => {
+    navbar.classList.remove('menu-open');
+  });
+}
 
   function handleNavbarState() {
     if (!navbar) return;
